@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Kynetix Collective</title>
+  <meta name="description" content="Shop sportswear from Nike, Adidas, Puma, Reebok and Under Armour at Kynetix Collective.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;1,700;1,800;1,900&family=Barlow+Condensed:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="announce">Free shipping on orders over 1000 EGP &nbsp;|&nbsp; New season drops every week</div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+
+      <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+
+      <a href="index.html" class="logo" aria-label="Kynetix Collective home">
+        <img src="images/logo.png" alt="Kynetix Collective" id="logoImg">
+        <span class="logo__fallback" id="logoFallback" hidden>
+          <strong>KYNETIX</strong><small>COLLECTIVE</small>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Main">
+        <div class="nav-item">
+          <a href="shop.html?category=Men">Men</a>
+          <div class="dropdown">
+            <a href="shop.html?category=Men&sub=Shoes">Shoes</a>
+            <a href="shop.html?category=Men&sub=Tops">Tops & T-Shirts</a>
+            <a href="shop.html?category=Men&sub=Hoodies">Hoodies & Jackets</a>
+            <a href="shop.html?category=Men&sub=Pants">Pants & Shorts</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="shop.html?category=Women">Women</a>
+          <div class="dropdown">
+            <a href="shop.html?category=Women&sub=Shoes">Shoes</a>
+            <a href="shop.html?category=Women&sub=Tops">Tops & Sports Bras</a>
+            <a href="shop.html?category=Women&sub=Leggings">Leggings & Shorts</a>
+            <a href="shop.html?category=Women&sub=Hoodies">Hoodies & Jackets</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="shop.html?category=Kids">Kids</a>
+          <div class="dropdown">
+            <a href="shop.html?category=Kids&sub=Shoes">Shoes</a>
+            <a href="shop.html?category=Kids&sub=Boys">Boys Clothing</a>
+            <a href="shop.html?category=Kids&sub=Girls">Girls Clothing</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="shop.html?category=Accessories">Accessories</a>
+          <div class="dropdown">
+            <a href="shop.html?category=Accessories&sub=Bags">Bags & Backpacks</a>
+            <a href="shop.html?category=Accessories&sub=Hats">Hats & Caps</a>
+            <a href="shop.html?category=Accessories&sub=Socks">Socks & Gear</a>
+          </div>
+        </div>
+
+        <div class="nav-item">
+          <a href="shop.html">Brands</a>
+          <div class="dropdown">
+            <a href="shop.html?brand=Nike">Nike</a>
+            <a href="shop.html?brand=Adidas">Adidas</a>
+            <a href="shop.html?brand=Puma">Puma</a>
+            <a href="shop.html?brand=Reebok">Reebok</a>
+            <a href="shop.html?brand=Under Armour">Under Armour</a>
+          </div>
+        </div>
+      </nav>
+
+      <form class="search" role="search" id="searchForm">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+        <input type="search" id="searchInput" placeholder="Search shoes, apparel, brands..." aria-label="Search">
+      </form>
+
+      <div class="actions">
+        <button class="icon-btn" id="accountBtn" aria-label="Sign in or log in">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>
+        </button>
+        <button class="icon-btn bag-btn" id="bagBtn" aria-label="Open shopping bag">
+          <svg viewBox="0 0 24 24"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+          <span class="bag-count" id="bagCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="section product-page">
+    <a href="shop.html" class="back-link">&larr; Back to Shop</a>
+
+    <div class="product-layout">
+      <!-- Product Image -->
+      <div class="product-gallery">
+        <img id="prodImg" src="" alt="">
+      </div>
+
+      <!-- Product Details & Options -->
+      <div class="product-info">
+        <p class="eyebrow" id="prodBrand" style="color: var(--grey-600);"></p>
+        <h1 id="prodTitle"></h1>
+        <p class="product-price" id="prodPrice"></p>
+        <p class="stock-status" id="prodStockStatus"></p>
+        <p class="product-desc" id="prodDesc"></p>
+
+        <!-- Color Picker -->
+        <div class="option-group">
+          <label>Color: <strong id="selectedColorName"></strong></label>
+          <div class="color-swatches" id="colorOptions"></div>
+        </div>
+
+        <!-- Size Picker -->
+        <div class="option-group">
+          <label>Select Size</label>
+          <div class="size-grid" id="sizeOptions"></div>
+        </div>
+
+        <button class="btn btn--black btn--full" id="addToCartBtn">Add to Bag</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; <span id="year"></span> Kynetix Collective. All rights reserved.</p>
+  </footer>
+
+  <!-- BAG DRAWER -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="bagDrawer" aria-hidden="true" aria-label="Shopping bag">
+    <div class="drawer__head">
+      <h3>Your Bag</h3>
+      <button class="icon-btn" id="closeBag" aria-label="Close bag">
+        <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+    </div>
+    <div class="drawer__body" id="bagItems"></div>
+    <div class="drawer__foot">
+      <div class="total"><span>Subtotal</span><strong id="bagTotal">0.00 EGP</strong></div>
+      <button class="btn btn--black btn--full" id="checkoutBtn">Checkout</button>
+    </div>
+  </aside>
+
+  <!-- ACCOUNT MODAL -->
+  <div class="modal" id="authModal" aria-hidden="true" role="dialog" aria-label="Account">
+    <div class="modal__box">
+      <button class="icon-btn modal__close" id="closeAuth" aria-label="Close">
+        <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+      <div class="tabs">
+        <button class="tab is-active" data-tab="login">Log In</button>
+        <button class="tab" data-tab="signup">Sign Up</button>
+      </div>
+      <form class="auth-form" id="loginForm">
+        <label>Email<input type="email" required placeholder="you@example.com"></label>
+        <label>Password<input type="password" required placeholder="••••••••"></label>
+        <button class="btn btn--black btn--full" type="submit">Log In</button>
+      </form>
+      <form class="auth-form" id="signupForm" hidden>
+        <label>Full name<input type="text" required placeholder="Your name"></label>
+        <label>Email<input type="email" required placeholder="you@example.com"></label>
+        <label>Password<input type="password" required minlength="6" placeholder="At least 6 characters"></label>
+        <button class="btn btn--black btn--full" type="submit">Create Account</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
